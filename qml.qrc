@@ -1,41 +1,29 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
-        <file>MainForm.ui.qml</file>
-        <file>Main.js</file>
-        <file>background.png</file>
-        <file>Bad.png</file>
-        <file>Bad2.png</file>
-        <file>Bad3.png</file>
-        <file>boom.png</file>
-        <file>boom2.png</file>
-        <file>boom3.png</file>
-        <file>cloud.png</file>
-        <file>cloud2.png</file>
-        <file>cloud3.png</file>
-        <file>life-off.png</file>
-        <file>life.png</file>
-        <file>lifeDown.png</file>
-        <file>lifeDown2.png</file>
-        <file>lifeDown3.png</file>
-        <file>logo.png</file>
-        <file>logoMobileDupot.png</file>
-        <file>EnemyQml.qml</file>
-        <file>BadSprite.png</file>
-        <file>boom.qml</file>
-        <file>boomSprite.png</file>
-        <file>lifeDownSprite.png</file>
-        <file>lifeDown.qml</file>
-        <file>lifeUp.png</file>
-        <file>lifeUp.qml</file>
-        <file>lifeUpOff.qml</file>
-        <file>logo.qml</file>
-        <file>cloud.qml</file>
-        <file>startGame.qml</file>
+        <file>Menu.qml</file>
+        <file>Splashscreen.qml</file>
+        <file>Scene.qml</file>
+        <file>GameOver.qml</file>
+        <file>Enemy.qml</file>
+        <file>Boom.qml</file>
+        <file>LifeDown.qml</file>
+        <file>Life.qml</file>
+        <file>Cloud.qml</file>
+    </qresource>
+    <qresource prefix="/js">
+        <file>main.js</file>
+        <file>game.js</file>
+        <file>enemy.js</file>
+    </qresource>
+    <qresource prefix="/images">
+        <file>logoMobileDupot.jpg</file>
         <file>startGame.png</file>
         <file>gameOver.png</file>
-        <file>gameOver.qml</file>
-        <file>btn-jouer.png</file>
-        <file>btn-rejouer.png</file>
+        <file>BadSprite.png</file>
+        <file>boomSprite.png</file>
+        <file>lifeDownSprite.png</file>
+        <file>lifeUp.png</file>
+        <file>cloud.png</file>
     </qresource>
 </RCC>
