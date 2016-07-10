@@ -17,17 +17,28 @@ Rectangle {
         width:mainWindow.oGame.calcul(400)
         height:mainWindow.oGame.calcul(650)
 
+        Bouton{
+            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.verticalCenter: parent.verticalCenter
+            _width: mainWindow.oGame.calcul(291)
+            _height: mainWindow.oGame.calcul(33)
+            _text: qsTr("Jouer!")
+            _link:mainWindow.oGame.pageGameStart
+        }
 
-        Button {
+
+        /*Button {
             id: button1
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
             width: mainWindow.oGame.calcul(291)
             height: mainWindow.oGame.calcul(33)
             text: qsTr("Jouer!")
+            smooth: true
+
 
             onClicked:mainWindow.oGame.pageGameStart()
-        }
+        }*/
     }
 }
 

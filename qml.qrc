@@ -10,6 +10,7 @@
         <file>LifeDown.qml</file>
         <file>Life.qml</file>
         <file>Cloud.qml</file>
+        <file>Bouton.qml</file>
     </qresource>
     <qresource prefix="/js">
         <file>main.js</file>

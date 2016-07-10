@@ -20,7 +20,7 @@ Rectangle {
             id:oScore
             text:'000000'
             anchors.right: parent.right
-            font.pointSize: 16
+            font.pointSize: 22
             font.bold: true
             color:"white"
         }
@@ -34,28 +34,27 @@ Rectangle {
             source: oScore
         }
 
-        Button {
-            id: button1
+        Bouton{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            width: mainWindow.oGame.calcul(291)
-            height: mainWindow.oGame.calcul(33)
-            text: qsTr("Re-Jouer!")
-
-            onClicked:mainWindow.oGame.pageGameStart()
+            _width: mainWindow.oGame.calcul(291)
+            _height: mainWindow.oGame.calcul(33)
+            _text: qsTr("Re-Jouer!")
+            _link:mainWindow.oGame.pageGameStart
         }
 
-        Button {
-            id: button2
+        Bouton{
             anchors.horizontalCenter: parent.horizontalCenter
             anchors.verticalCenter: parent.verticalCenter
-            anchors.verticalCenterOffset: 50
-            width: mainWindow.oGame.calcul(291)
-            height: mainWindow.oGame.calcul(33)
-            text: qsTr("Retour au menu")
 
-            onClicked:mainWindow.oGame.pageMenu()
+            anchors.verticalCenterOffset: mainWindow.oGame.calcul(50)
+
+            _width: mainWindow.oGame.calcul(291)
+            _height: mainWindow.oGame.calcul(33)
+            _text: qsTr("Retour au menu")
+            _link:mainWindow.oGame.pageMenu
         }
+
     }
 
     function score(text_){

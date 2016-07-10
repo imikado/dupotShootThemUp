@@ -14,11 +14,11 @@ Rectangle {
             anchors.centerIn: parent
             source: "/images/BadSprite.png"
             frameCount: 3
-            frameRate: 1/2
+            frameRate: 1/4
             frameSync: true
             frameWidth:  80
             frameHeight: 80
-
+            interpolate: true
 
             Sprite{
                 frameX:0

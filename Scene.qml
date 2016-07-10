@@ -11,7 +11,7 @@ Rectangle{
         id:oScore
         text:'000000'
         anchors.right: parent.right
-        font.pointSize: 16
+        font.pointSize: 22
         font.bold: true
         color:"white"
     }
