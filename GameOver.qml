@@ -20,7 +20,7 @@ Rectangle {
             id:oScore
             text:'000000'
             anchors.right: parent.right
-            font.pointSize: 22
+            font.pixelSize: mainWindow.oGame.calcul( 30)
             font.bold: true
             color:"white"
         }

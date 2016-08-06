@@ -4,14 +4,13 @@ import QtGraphicalEffects 1.0
 Rectangle{
     visible:true
     color:'#1868b2'
-    width:mainWindow.oGame.width
-    height:mainWindow.oGame.height
+
 
     Text{
         id:oScore
         text:'000000'
         anchors.right: parent.right
-        font.pointSize: 22
+        font.pixelSize: mainWindow.oGame.calcul( 30)
         font.bold: true
         color:"white"
     }

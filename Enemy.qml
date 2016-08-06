@@ -34,10 +34,10 @@ Rectangle {
 
     MouseArea{
         anchors.fill: parent
-        onClicked:playerKilled()
+        onClicked:killedByPlayer()
     }
 
-    function playerKilled(){
+    function killedByPlayer(){
         destroy();
         mainWindow.oGame.scoreUp(x,y);
         console.debug('player killed enemy');

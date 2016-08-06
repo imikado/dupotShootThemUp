@@ -23,8 +23,8 @@ Item {
         Text {
             anchors.centerIn: parent
             text: qsTr(_text)
-            font.pointSize: 16
             color:"#ffffff"
+            font.pixelSize: mainWindow.oGame.calcul( 20)
         }
 
         MouseArea{

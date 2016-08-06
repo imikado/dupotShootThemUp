@@ -40,7 +40,7 @@ function start(width_,height_){
 }
 function ComponentQml(src_,x_,y_){
     this.oComponent =   Qt.createComponent( src_);
-    this.object=this.oComponent.createObject(canvas,{"x": x_, "y": y_});
+    this.object=this.oComponent.createObject(oPageScene,{"x": x_, "y": y_});
 
     if( this.oComponent.status === Component.Error ){
         console.debug("Error:"+ this.oComponent.errorString() );
@@ -114,19 +114,19 @@ function scoreUp(x_,y_){
 
     iScore+=10;
 
-    oPageScene.object.score(iScore);
+    oPageScene.score(iScore);
 
     console.debug('new score: '+iScore);
 }
 function lifeDown(x_,y_){
-    var oDie=new ComponentQml('/LifeDown.qml',x_,y_- calcul(80));
+    var oDie=new ComponentQml('/LifeDown.qml',x_,y_- calcul(117));
 
     console.debug('tLife '+iLife+' off()');
     tLife[iLife-1].object.off();
 
     iLife--;
 
-    if(iLife==0){
+    if(iLife===0){
         pageGameOver();
     }
 }
@@ -136,43 +136,29 @@ function calcul(iValue_){
 }
 
 function pageSplashscreen(){
-    oPageSplashscreen=new ComponentQml('/Splashscreen.qml',0,0);
-    oPageSplashscreen.object.display();
+    oPageSplashscreen=mainWindow.launchPage('qrc:/Splashscreen.qml');
 }
 function pageMenu(){
-    resetPages();
-    oPageMenu=new ComponentQml('/Menu.qml',0,0);
+    oPageMenu=mainWindow.launchPage('qrc:/Menu.qml',0,0);
 }
 function pageGameStart(){
-    resetPages();
-    oPageScene=new ComponentQml('/Scene.qml',0,0);
+    oPageScene=mainWindow.launchPage('qrc:/Scene.qml',0,0);
 
     startParty();
 }
 function pageGameOver(){
     timerEnemy.stop();
-    resetPages();
-    oPageGameover=new ComponentQml('/GameOver.qml',0,0);
-    oPageGameover.object.score(iScore);
+
+
+
+    mainWindow.popPage();
+
+    oPageGameover=mainWindow.launchPage('qrc:/GameOver.qml',0,0);
+    oPageGameover.score(iScore);
 }
 
 function resetPages(){
-    if(oPageSplashscreen ){
-        oPageSplashscreen.object.destroy();
-        oPageSplashscreen=null;
-    }
-    if(oPageMenu){
-        oPageMenu.object.destroy();
-        oPageMenu=null;
-    }
-    if(oPageScene){
-        oPageScene.object.destroy();
-        oPageScene=null;
-    }
-    if(oPageGameover){
-        oPageGameover.object.destroy();
-        oPageGameover=null;
-    }
+
 }
 
 
@@ -181,7 +167,7 @@ function resetPages(){
 
 function Enemy(x_,y_){
     this.oComponent =   Qt.createComponent( "/Enemy.qml");
-    this.object=this.oComponent.createObject(oPageScene.object,{"x": x_, "y": y_});
+    this.object=this.oComponent.createObject(oPageScene,{"x": x_, "y": y_});
 
     if( this.oComponent.status === Component.Error ){
         console.debug("Error:"+ this.oComponent.errorString() );
@@ -190,6 +176,6 @@ function Enemy(x_,y_){
 
 function Cloud(x_,y_,duration_){
     this.oComponent =   Qt.createComponent( "/Cloud.qml");
-    this.object=this.oComponent.createObject(oPageScene.object,{"x": x_, "y": y_});
+    this.object=this.oComponent.createObject(oPageScene,{"x": x_, "y": y_});
     this.object.goTo(x_,duration_);
 }

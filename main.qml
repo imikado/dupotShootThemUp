@@ -1,5 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Window 2.2
+import QtQuick.Controls 1.2
 
 
 import "/js/game.js" as Game
@@ -14,9 +15,22 @@ Window{
 
     contentOrientation :Qt.PortraitOrientation
 
-    Rectangle{
-        id:canvas
-        color:"#ff22ff"
+
+
+    StackView {
+        id: stack
+        width: parent.width
+        height:parent.height
+    }
+
+
+    function popPage(){
+        stack.pop();
+    }
+
+    function launchPage(sView){
+        return stack.push(sView);
+
     }
 
     function initApplication(){
@@ -27,8 +41,6 @@ Window{
         width=mainWindow.oGame.width;
         height=mainWindow.oGame.height;
 
-        canvas.width=width;
-        canvas.height=height;
     }
 
     Timer{
